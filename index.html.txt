@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Interviewer (Prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lottie player CDN -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>Virtual Interviewer — Prototype</h1>
+      <p class="subtitle">Privacy-first, runs in your browser · No cloud required</p>
+    </header>
+
+    <section class="stage">
+      <div class="avatar-wrap">
+        <!-- Use a free Lottie animation; replace src if you want another -->
+        <lottie-player id="avatar" src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json"  background="transparent"  speed="1"  style="width:280px; height:280px;"  loop  autoplay></lottie-player>
+
+        <!-- Simple mouth element to animate -->
+        <div id="mouth" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <label for="jobSelect">Select Role</label>
+        <select id="jobSelect">
+          <option value="junior_dev">Junior Developer</option>
+          <option value="qa">QA Engineer</option>
+          <option value="support">Support Exec</option>
+        </select>
+
+        <button id="startBtn">Start Interview</button>
+        <button id="stopBtn" disabled>End Interview</button>
+      </div>
+    </section>
+
+    <section class="transcript">
+      <h2>Live Transcript</h2>
+      <div id="transcriptBox" aria-live="polite"></div>
+    </section>
+
+    <section class="log-and-report">
+      <h2>Session Log & Controls</h2>
+      <div id="sessionLog"></div>
+
+      <div class="actions">
+        <button id="downloadBtn" disabled>Download Session (JSON)</button>
+        <button id="playbackBtn" disabled>Play Audio (if recorded)</button>
+      </div>
+    </section>
+
+    <footer>
+      <small>Built with Web Speech API & SpeechSynthesis — demo prototype</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

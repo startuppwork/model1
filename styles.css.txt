@@ -1,0 +1,109 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --accent:#7c3aed;
+  --text:#e6eef8;
+  --muted:#9fb3c8;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:linear-gradient(180deg,#071221 0%, #082635 100%);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+main#app{
+  width:980px;
+  max-width:96%;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+}
+
+header h1{margin:0;font-size:20px}
+.subtitle{color:var(--muted);margin-top:6px;font-size:13px}
+
+.stage{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-top:18px;
+}
+
+.avatar-wrap{
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+#mouth{
+  width:80px;
+  height:18px;
+  background:var(--accent);
+  border-radius:40px;
+  margin-top:-40px;
+  transform-origin:center;
+  transition:transform 120ms ease;
+  opacity:0.95;
+  box-shadow:0 6px 18px rgba(124,58,237,0.2);
+}
+
+/* mouth open class */
+.mouth-open{ transform: scaleY(2); }
+
+.controls{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.controls select, .controls button{
+  padding:10px 14px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  color:var(--text);
+  font-size:14px;
+}
+
+.controls button{ cursor:pointer }
+.controls button:disabled{ opacity:0.5; cursor:not-allowed }
+
+.transcript, .log-and-report{
+  margin-top:18px;
+  background:rgba(255,255,255,0.01);
+  padding:12px;
+  border-radius:10px;
+}
+
+#transcriptBox{
+  min-height:70px;
+  padding:8px;
+  font-size:15px;
+  color:#d9eefc;
+}
+
+#sessionLog{
+  max-height:180px;
+  overflow:auto;
+  padding:8px;
+  background:rgba(0,0,0,0.25);
+  border-radius:8px;
+  font-family:monospace;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.actions{margin-top:10px;display:flex;gap:8px}
+footer{margin-top:12px;color:var(--muted);font-size:12px;text-align:center}
